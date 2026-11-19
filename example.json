@@ -1,0 +1,14 @@
+[
+  {
+    "case_id": "normal_case",
+    "input": {"drift": ["0", "0"], "forecast_at": "2", "east": ["0", "1/8", "3/8"], "west": ["0", "1/4", "1/2"]},
+    "expected": [["1/4", "3/8", true, true]],
+    "oracle": "频偏为零时初相恒定，两条闭弧的交集是 [1/4,3/8]。"
+  },
+  {
+    "case_id": "wrap_case",
+    "input": {"drift": ["0", "1/4"], "forecast_at": "2", "east": ["0", "3/4", "1/4"], "west": ["1", "0", "0"]},
+    "expected": [["0", "1/4", true, true]],
+    "oracle": "1 秒零线要求 p+d 为 0 或 1。第一支给出零，第二支给出 0<d≤1/4，2 秒的读数为 d。"
+  }
+]
